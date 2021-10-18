@@ -1,1 +1,0 @@
-# Docker training - orchestration Lab
