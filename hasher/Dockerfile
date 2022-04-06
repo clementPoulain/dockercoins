@@ -5,5 +5,5 @@ RUN 	gem install sinatra
 RUN 	gem install thin
 ADD 	hasher.rb /
 CMD 	["ruby", "hasher.rb"]
-EXPOSE 	80
+EXPOSE 	8002
 HEALTHCHECK  --interval=1s --timeout=2s --retries=3 --start-period=1s CMD curl http://localhost/ || exit 1
