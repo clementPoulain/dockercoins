@@ -3,4 +3,4 @@ MAINTAINER      brahim.hamdi.consult@gmail.com
 RUN 	pip install Flask
 COPY 	rng.py /
 CMD 	["python", "rng.py"]
-EXPOSE 	8001
+EXPOSE 	80
