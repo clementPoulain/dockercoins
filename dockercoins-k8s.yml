@@ -1,4 +1,3 @@
-cat /tmp/dockercoins-k8s.yml 
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -127,9 +126,9 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
- selector:
-   app: dockercoins
-   tier: hasher
+  selector:
+    app: dockercoins
+    tier: hasher
 ---
 apiVersion: v1
 kind: Service
