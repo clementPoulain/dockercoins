@@ -1,3 +1,4 @@
+cat /tmp/dockercoins-k8s.yml 
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -12,15 +13,15 @@ spec:
    matchLabels:
      app: dockercoins
      tier: hasher
-   template:
-     metadata:
-       labels:
-         app: dockercoins
-         tier: hasher
-     spec:
-       containers:
-       - name: hasher
-         image: gitlab.orsys.fr:5050/brahimhamdi/dockercoins/hasher:latest
+ template:
+   metadata:
+     labels:
+       app: dockercoins
+       tier: hasher
+   spec:
+     containers:
+     - name: hasher
+       image: brahimhamdi/hasher:latest
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -57,15 +58,15 @@ spec:
     matchLabels:
       app: dockercoins
       tier: rng
-    template:
-      metadata:
-        labels:
-          app: dockercoins
-          tier: rng
-      spec:
-        containers:
-        - name: rng
-          image: gitlab.orsys.fr:5050/brahimhamdi/dockercoins/rng:latest
+  template:
+    metadata:
+      labels:
+        app: dockercoins
+        tier: rng
+    spec:
+      containers:
+      - name: rng
+        image: brahimhamdi/rng:latest
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -111,7 +112,7 @@ spec:
     spec:
       containers:
       - name: worker
-        image: gitlab.orsys.fr:5050/brahimhamdi/dockercoins/worker:latest
+        image: brahimhamdi/worker:latest
 ---
 apiVersion: v1
 kind: Service
