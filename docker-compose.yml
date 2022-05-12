@@ -1,0 +1,17 @@
+version: "3"
+services:
+  hasher:
+    image: brahimhamdi/hasher
+  rng:
+    image: brahimhamdi/rng
+  worker:
+    image: brahimhamdi/worker
+  webui:
+    image: brahimhamdi/webui
+  redis:
+    image: redis
+
+
+
+
+
