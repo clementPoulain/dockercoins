@@ -1,0 +1,15 @@
+version: "3"
+services:
+  worker:
+    image: jil22400/dockercoins:latest
+    build: ./worker/
+  rng:
+    image: asabella/rng:latest
+  hasher:
+    image: alexisbonnet1997/hasher:latest
+  webui:
+    image: brahimhamdi/webui:1.0
+    ports:
+      - "8000:80"
+  redis:
+    image: redis

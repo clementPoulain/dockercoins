@@ -1,0 +1,10 @@
+- name: déploiement de dockercoins sur k8s
+  hosts: k8s-master
+  become: false
+  gather_facts: false
+  tasks:
+  - name: Vérifier cluster k8s
+    command: kubectl cluster-info
+    register: k8sClusterOk
+  - name: deploy dockercoins
+    command: kubectl apply -f /tmp/dockercoins-manifest.yml
